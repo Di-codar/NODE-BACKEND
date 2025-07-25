@@ -1,6 +1,7 @@
 import User from "../models/user.js"; 
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import sendEmail from "../sendEmail.js";
 
 const forsignup = async (req, res) => {
   let { fullname, email, password } = req.body;
@@ -12,6 +13,7 @@ const forsignup = async (req, res) => {
     email,
     password : hashedPassword
   });
+  
   const welcomeMail =`
   <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #bfdbe4ff; padding: 20px; border-radius: 5px;">
      <h1><center>Welcome to Our Platform </center> <img scr="https://res.cloudinary.com/dh8dtvvy6/image/upload/v1752755027/Blog_pictures/vdktuipzojruyrasa9hw.jpg" width="70px"/></h1>
