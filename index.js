@@ -8,6 +8,7 @@ import { get } from "http";
 import userRoutes from './routes/userRoutes.js'
 import postRoutes from './routes/postRoutes.js'
 import commentRoutes from './routes/commentRoutes.js';
+import cors from 'cors';
 
 // import { del1post, forsignup, get1post, getAllPosts, update1post } from "./controllers/postcontroller.js";
 // const express = require('express');
@@ -29,6 +30,9 @@ mongoose
 
 app.use(e.json());
 app.use(e.urlencoded({ extended: true }));
+app.use(cors({
+  origin: 'http://localhost:5173'
+}))
 
 app.use(e.static("./box"));
 

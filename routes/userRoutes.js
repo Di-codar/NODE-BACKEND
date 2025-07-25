@@ -3,7 +3,7 @@ import { del1user, forlogin, forsignup, get1user, getAllUsers, update1user } fro
 import authorize from "../middlewares/authorize.js";
 const router = e.Router();
 
-router.post('/register', forsignup);
+router.post('/', forsignup);
 
 router.get('/', getAllUsers);
 
